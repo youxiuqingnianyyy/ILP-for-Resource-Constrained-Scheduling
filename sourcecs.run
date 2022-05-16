@@ -1,0 +1,9 @@
+model sourcecs.mod
+data sourcecs.dat
+option solver 'cplex';
+#option cplex_options 'iisfind 1';
+solve;
+#display {i in 1.._ncons: _con[i].iis <> "non"} (_conname[i], _con[i].iis);
+display MaxLatency;
+display sigma;
+display beta;
